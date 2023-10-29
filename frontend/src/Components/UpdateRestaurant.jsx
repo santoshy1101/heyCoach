@@ -36,7 +36,7 @@ const UpdateRestaurant = ({ id, setUpdateShow }) => {
   useEffect(() => {
     id ? setFormData(restaurant) : setFormData(initState)
   }, [id])
-  console.log(restaurant)
+  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -114,29 +114,3 @@ const UpdateRestaurant = ({ id, setUpdateShow }) => {
 }
 
 export default UpdateRestaurant
-
-// const UpdateRestaurantInfo = ({ setUpdateShow,editData,setEditData }) => {
-//     const [restaurantInfo, setRestaurantInfo] = useState(initState)
-//     const handleChange = (e) => {
-//       const { name, value } = e.target
-//       setRestaurantInfo({ ...restaurantInfo, [name]: value })
-//     }
-
-//     const handleSubmit = (event) => {
-//       event.preventDefault()
-//       setUpdateShow(false)
-//       console.log(restaurantInfo)
-//     }
-
-//     const handleUpdate = ()=>{
-//       console.log(first)
-//     }
-//     useEffect(()=>{
-//       console.log(editData)
-
-//       editData?.restaurant_name ? setRestaurantInfo(editData) : setRestaurantInfo(initState)
-//     },[editData])
-//     return (
-
-//     )
-//   }

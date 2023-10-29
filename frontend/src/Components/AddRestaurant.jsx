@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { addRestaurant } from '../Redux/Slices/restaurantSlice'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,6 +11,8 @@ const initState = {
 const AddRestaurant = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const restaurants = useSelector((state) => state.restaurant)
+
 
   const [formData, setFormData] = useState(initState)
 
@@ -21,7 +23,7 @@ const AddRestaurant = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(addRestaurant(formData))
+    dispatch(addRestaurant({...formData,id:restaurants.length+1}))
     // Reset the form
     setFormData(initState)
     navigate('/')

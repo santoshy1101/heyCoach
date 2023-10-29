@@ -10,6 +10,7 @@ const RestaurantLists = () => {
 
   const handleDelete = (item) => {
     dispatch(deleteRestaurant(item.id))
+    setUpdateShow(false)
   }
   const [updateShow, setUpdateShow] = useState(false)
   const [id, setId] = useState('')
